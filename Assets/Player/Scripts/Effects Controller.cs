@@ -47,5 +47,15 @@ namespace Player
                 afterImagesManager.StopAfterImages(playerSr.transform);
             }
         }
+
+        public void PlayDeathStartEffects()
+        {
+
+        }
+
+        public void PlayDeathFinishEffects()
+        {
+
+        }
     }
 }

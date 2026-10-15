@@ -23,5 +23,11 @@ namespace Player
         [Header("Dash")]
         public float dashSpeed;
         public float dashDuration;
+
+        [Header("Death")]
+        public float knockbackDistance;
+        public float wallDetectedOffset;
+        public float deathDuration;
+        public Ease deathEase;
     }
 }

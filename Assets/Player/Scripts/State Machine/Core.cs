@@ -63,6 +63,7 @@ namespace Player
         public Vector2 moveDirection;
         public Vector2 lastMoveDirection = Vector2.right;
         public int facingDirection;
+        public Vector3 deathDirection;
 
         [Header("Jump Variables")]
         public int remainingJumps;

@@ -22,3 +22,7 @@ MonoBehaviour:
   jumpBuffer: 0.2
   dashSpeed: 25
   dashDuration: 0.2
+  knockbackDistance: 5
+  wallDetectedOffset: 1
+  deathDuration: 1.5
+  deathEase: 18
