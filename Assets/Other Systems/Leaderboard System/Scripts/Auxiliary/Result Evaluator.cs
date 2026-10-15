@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace LeaderboardSystem
 {
-    public class ResultDisplay : MonoBehaviour
+    public class ResultEvaluator : MonoBehaviour
     {
         [SerializeField] private GeneralData generalData;
 
@@ -13,6 +13,14 @@ namespace LeaderboardSystem
 
         private void Start()
         {
+            if (!generalData.evaluatesResult)
+            {
+                targetImage.color = Color.clear;
+                tierText.maxVisibleCharacters = 0;
+
+                return;
+            }
+
             int score = PlayerPrefs.GetInt("Score", 0);
             int maxScore = generalData.maxScore;
 

@@ -30,9 +30,6 @@ namespace LeaderboardSystem
         private int lastDisplayIndex;
         private bool displayBusy;
 
-        public static event Action OnScoreSubmitted;
-        public static event Action OnLeaderboardExitted;
-
         private void Awake()
         {
             for (int i = 0; i < names.Count; i++)
@@ -47,8 +44,7 @@ namespace LeaderboardSystem
         {
             EventSystem.current.SetSelectedGameObject(submitButton.gameObject);
 
-            if (SceneManager.GetActiveScene().name == "Leaderboard")
-                effectsController.ApplyStartEffects();
+            effectsController.ApplyStartEffects();
         }
 
         public string GetName()
@@ -96,8 +92,6 @@ namespace LeaderboardSystem
         {
             nameInput.interactable = false;
             submitButton.interactable = false;
-
-            OnScoreSubmitted?.Invoke();
         }
 
         public void ChangeDisplay()
@@ -114,11 +108,6 @@ namespace LeaderboardSystem
             RectTransform displayOut = displays[lastDisplayIndex];
 
             effectsController.ApplyDisplayEffects(displayIn, displayOut, () => displayBusy = false);
-        }
-
-        public void ExitLeaderboard()
-        {
-            OnLeaderboardExitted?.Invoke();
         }
     }
 }

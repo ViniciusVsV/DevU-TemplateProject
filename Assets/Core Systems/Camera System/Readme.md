@@ -10,7 +10,7 @@ O sistema fornece uma câmera pré-configurada com definições comuns nos jogos
 
 ## Como usar
 
-1. Adicione o asset à **primeira cena do jogo** (ou à cena principal onde o jogo ocorre).
+1. Adicione o asset a, **pelo menos**, a primeira cena do jogo.
 2. O objeto possui `DontDestroyOnLoad` e persistirá durante toda a sessão.
 3. Acesse o sistema externamente via glue code ou conexão direta para utilizar os métodos disponibilizados.
 

@@ -3,26 +3,21 @@ using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Leaderboards;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LeaderboardSystem
 {
     public class LeaderboardManager : MonoBehaviour
     {
         [SerializeField] private GeneralData generalData;
-
-        private LeaderboardUI leaderboardUI;
+        [SerializeField] private LeaderboardUI leaderboardUI;
 
         private bool hasSubmitted;
-        
+
+        public static event Action OnLeaderboardExitted;
+
         private async void Start()
         {
-            leaderboardUI = FindAnyObjectByType<LeaderboardUI>();
-            if (leaderboardUI == null)
-            {
-                Debug.LogError("[Leaderboard Manager] No Leaderboard UI found!");
-                return;
-            }
-
             try
             {
                 if (UnityServices.State == ServicesInitializationState.Uninitialized)
@@ -37,15 +32,6 @@ namespace LeaderboardSystem
             {
                 Debug.LogException(e);
             }
-        }
-
-        private void OnEnable()
-        {
-            LeaderboardUI.OnScoreSubmitted += SubmitScore;
-        }
-        private void OnDisable()
-        {
-            LeaderboardUI.OnScoreSubmitted -= SubmitScore;
         }
 
         public async void SubmitScore()
@@ -65,7 +51,7 @@ namespace LeaderboardSystem
 
             //Quarto, tenta fazer as operações de troca de contas
             hasSubmitted = true;
-            
+
             try
             {
                 AuthenticationService.Instance.SignOut(true);
@@ -104,6 +90,14 @@ namespace LeaderboardSystem
             {
                 Debug.LogException(e);
             }
+        }
+
+        public void ExitLeaderboard()
+        {
+            if (generalData.loadNextScene)
+                SceneManager.LoadScene(generalData.nextSceneName);
+            else
+                OnLeaderboardExitted?.Invoke();
         }
     }
 }

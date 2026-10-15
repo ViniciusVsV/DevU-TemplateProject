@@ -58,7 +58,8 @@ namespace GeneralEffects
 
             muffleSequence.OnComplete(() =>
             {
-                //Se uma duração foi passada, o demuffle deve obrigatoriamente vir quando essa duração acabar
+                //Se uma duração foi passada, o demuffle deve obrigatoriamente vir quando essa duração acabar, pois
+                //fica implícito que o sistema que invocou o efeito quer que ele rode por esse tempo e já termine por conta própria
                 if (muffledDuration != null)
                     PlayDemuffle(demuffilgDuration, demufflingEase);
             });

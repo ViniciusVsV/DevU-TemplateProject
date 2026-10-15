@@ -7,6 +7,9 @@ namespace LeaderboardSystem
     public class GeneralData : ScriptableObject
     {
         public string leaderboardId;
+        public bool evaluatesResult;
+        public bool loadNextScene;
+        public string nextSceneName;
 
         [Header("Evaluation")]
         public int maxScore;

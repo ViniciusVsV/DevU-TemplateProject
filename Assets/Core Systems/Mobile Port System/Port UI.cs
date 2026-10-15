@@ -6,8 +6,21 @@ namespace MobilePortSystem
     {
         [SerializeField] private GameObject rootObject;
 
+        [Header("Movement Controls")]
+        [SerializeField] private GameObject movementButtons;
+        [SerializeField] private GameObject movementStick;
+        [SerializeField] private bool usesStick;
+
         [Header("Pause Behaviour")]
         [SerializeField] private GameObject[] disableableOnPause;
+
+        private void Awake()
+        {
+            if (usesStick)
+                movementButtons.SetActive(false);
+            else
+                movementStick.SetActive(false);
+        }
 
         public void ToggleUI(bool isActivating)
         {
