@@ -26,12 +26,6 @@ namespace Player
 
         public static event Action<bool> OnPausePress;
 
-        private void Awake()
-        {
-            inputsDisabled = true;
-            pauseDisabled = true;
-        }
-
         public void OnMove(InputAction.CallbackContext context)
         {
             if (inputsDisabled || movementDisabled)
