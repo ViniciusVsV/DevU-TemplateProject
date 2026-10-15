@@ -6,7 +6,6 @@ TagManager:
   tags:
   - MusicSource
   - CameraConfiner
-  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -47,11 +46,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 150248419
-    locked: 0
   - name: Ground
     uniqueID: 3133487763
+    locked: 0
+  - name: Player
+    uniqueID: 150248419
     locked: 0
   - name: Foreground
     uniqueID: 2287438337

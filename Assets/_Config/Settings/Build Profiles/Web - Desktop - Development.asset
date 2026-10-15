@@ -36,7 +36,7 @@ MonoBehaviour:
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
     - line: '|   companyName: DevU'
-    - line: '|   productName: Project Template'
+    - line: '|   productName: Template Project'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}'
