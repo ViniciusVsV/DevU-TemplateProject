@@ -1,0 +1,11 @@
+-> main
+
+==main==
+TESTE
+
+DIALOGO
+
+PORRA
+KAPAKAPA
+
+->END

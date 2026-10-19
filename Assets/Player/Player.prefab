@@ -1372,8 +1372,15 @@ MonoBehaviour:
   movementDisabled: 0
   jumpDisabled: 0
   dashDisabled: 0
+  interactDisabled: 0
   pauseDisabled: 0
   isPaused: 0
+  OnInteractPressedUnity:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPausePressedUnity:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9093954799885649344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1523,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f19fbecb-690f-4a79-8524-94cc24455e5a
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9201306529648124780}
+        m_TargetAssemblyTypeName: Player.InputReader, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85e469a4-0570-4473-af88-4bc087e6f604
+    m_ActionName: 'Player/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Player
@@ -21,10 +22,16 @@ namespace Player
         public bool movementDisabled;
         public bool jumpDisabled;
         public bool dashDisabled;
+        public bool interactDisabled;
         public bool pauseDisabled;
         public bool isPaused;
 
-        public static event Action<bool> OnPausePress;
+        [Header("Events")]
+        public UnityEvent OnInteractPressedUnity;
+        public UnityEvent OnPausePressedUnity;
+
+        public static event Action OnInteractPressed;
+        public static event Action<bool> OnPausePressed;
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -72,6 +79,18 @@ namespace Player
             }
         }
 
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (inputsDisabled || interactDisabled)
+                return;
+
+            if (context.performed)
+            {
+                OnInteractPressedUnity?.Invoke();
+                OnInteractPressed?.Invoke();
+            }
+        }
+
         public void OnPause(InputAction.CallbackContext context)
         {
             if (pauseDisabled)
@@ -86,7 +105,8 @@ namespace Player
 
                 inputsDisabled = isPaused;
 
-                OnPausePress?.Invoke(isPaused);
+                OnPausePressedUnity?.Invoke();
+                OnPausePressed?.Invoke(isPaused);
             }
         }
 

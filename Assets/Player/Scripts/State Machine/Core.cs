@@ -82,6 +82,5 @@ namespace Player
         [Header("Input Variables")]
         public InputEnum consumedInput;
         public bool jumpHeld;
-        public bool canPause;
     }
 }
