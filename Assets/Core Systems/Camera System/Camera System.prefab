@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7575180736386438325}
   - component: {fileID: 6414425046613454614}
+  - component: {fileID: 212121986725895630}
   m_Layer: 0
   m_Name: Camera System
   m_TagString: Untagged
@@ -169,6 +170,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSystem.PersistenceHandler
   cameraData: {fileID: 11400000, guid: 409ecc2319697b94288eb677a78ac508, type: 2}
+  mainCamera: {fileID: 8054791517811414485}
+--- !u!114 &212121986725895630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015964736602224135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78495e60c9e70ac4fb173af8190ca4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraSystem.CanvasesSetup
   mainCamera: {fileID: 8054791517811414485}
 --- !u!1 &4695344417461711977
 GameObject:
